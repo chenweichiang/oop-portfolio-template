@@ -38,13 +38,14 @@ Deadline 前 push＝繳交。commit 的時間戳就是紀錄，每一步嘗試�
 Codespace 是雲端容器，登入的「自動跳轉」到不了它——**要手動貼授權碼**：
 
 1. 終端機打 `claude` → 選 **Claude account with subscription**
-2. **按 `c`** 複製登入網址（不要等它開瀏覽器）
-3. 自己開新分頁貼上網址 → 登入 Claude 帳號 → 授權
+2. 畫面會印出一條**登入網址**——先把終端機面板拉大，然後在網址上**連點三下（快速點三次）**：會一次全選整條網址（包含換行的部分）→ 複製
+   （按 `c` 理論上會自動複製，但瀏覽器常擋剪貼簿權限——實測直接三連點反白最可靠）
+3. 開新分頁貼上網址 → 登入 Claude 帳號 → 授權
 4. 頁面顯示一組**授權碼** → 複製 → 回終端機貼在 `Paste code here…` → Enter
 
 排錯：
 
-- 出現「Invalid OAuth Request — Unknown scope: …」？→ 網址在複製時**掉了字元**（終端機換行截斷）。直接在瀏覽器網址列把拼錯的 scope 改對（例：`fil_upload`→`file_upload`）重新載入；重來時記得用 **`c` 鍵**複製網址，**不要用滑鼠框選**換行的長網址
+- 出現「Invalid OAuth Request — Unknown scope: …」？→ 網址在複製時**掉了字元**（用拖曳框選跨行網址的經典後果）。回到第 2 步用**三連點**重新全選複製；或直接在瀏覽器網址列把拼錯的 scope 改對（例：`fil_upload`→`file_upload`）重新載入
 - 授權完跳到「無法連上 localhost」錯誤頁？→ 看**網址列**，把 `code=` 後面那串複製回終端機貼上即可
 - 貼上沒反應？→ 終端機用**右鍵→貼上**或 `Ctrl+Shift+V`；再不行檢查 `claude --version` 是否 ≥ 2.1.108，舊了就 `npm install -g @anthropic-ai/claude-code@latest`
 
