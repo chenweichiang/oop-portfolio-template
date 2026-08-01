@@ -24,6 +24,6 @@
     "CLAUDE_CONFIG_DIR": "/home/node/.claude"
   },
   "remoteUser": "node",
-  "postCreateCommand": "sudo chown -R node:node /home/node/.claude || true",
+  "postCreateCommand": "sudo chown -R node:node /home/node/.claude || true; sudo npm install -g @anthropic-ai/claude-code@latest || true",
   "forwardPorts": [3000, 5500]
 }
