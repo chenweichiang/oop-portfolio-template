@@ -11,7 +11,7 @@
 2. 進到你的這個 repo → 綠色 **Code** 按鈕 → **Codespaces** → **Create codespace on main**
    （第二次以後：同一個地方會看到你之前的 codespace，點開即續，幾秒就好）
 3. 等瀏覽器裡出現 **VS Code 版面**——這就是你的工作環境，任何電腦打開都一模一樣
-4. 下方終端機輸入 `claude` → 依畫面指示用你的 Claude 帳號登入（登入一次即可，之後都記得你）
+4. 下方終端機輸入 `claude` → 登入你的 Claude 帳號（登入一次即可，之後都記得你）——**照下面的「登入 SOP」做，不要等它自動開瀏覽器**
 5. 開始工作。做完記得：**Source Control 面板 → commit → push**（推上去的才算數）
 
 ## 📁 這個 repo 的結構
@@ -32,6 +32,20 @@ week01/ … week16/ ← 每週作業：index.html + sketch.js + README.md（四�
 4. **AI 揭露欄**：`README.md` 裡照格式填（沒用到就寫「未使用」）
 
 Deadline 前 push＝繳交。commit 的時間戳就是紀錄，每一步嘗試都是過程的證據。
+
+## 🔑 Claude 登入 SOP（Codespace 裡一定要走手動流程）
+
+Codespace 是雲端容器，登入的「自動跳轉」到不了它——**要手動貼授權碼**：
+
+1. 終端機打 `claude` → 選 **Claude account with subscription**
+2. **按 `c`** 複製登入網址（不要等它開瀏覽器）
+3. 自己開新分頁貼上網址 → 登入 Claude 帳號 → 授權
+4. 頁面顯示一組**授權碼** → 複製 → 回終端機貼在 `Paste code here…` → Enter
+
+排錯：
+
+- 授權完跳到「無法連上 localhost」錯誤頁？→ 看**網址列**，把 `code=` 後面那串複製回終端機貼上即可
+- 貼上沒反應？→ 終端機用**右鍵→貼上**或 `Ctrl+Shift+V`；再不行檢查 `claude --version` 是否 ≥ 2.1.108，舊了就 `npm install -g @anthropic-ai/claude-code@latest`
 
 ## ⚠️ Codespaces 三件事
 
