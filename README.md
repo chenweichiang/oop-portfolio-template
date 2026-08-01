@@ -60,6 +60,49 @@ Codespace 是雲端容器，登入的「自動跳轉」到不了它——**要�
 - 授權完跳到「無法連上 localhost」錯誤頁？→ 看**網址列**，把 `code=` 後面那串複製回終端機貼上即可
 - 貼上沒反應？→ 終端機用**右鍵→貼上**或 `Ctrl+Shift+V`；再不行檢查 `claude --version` 是否 ≥ 2.1.108，舊了就 `npm install -g @anthropic-ai/claude-code@latest`
 
+## 🎬 第一次試跑（照抄就會動）
+
+環境開好後，建兩個檔案試跑看看（左邊檔案總管右鍵 → New Folder 建 `test/`，裡面 New File）：
+
+**`test/index.html`**
+
+```html
+<!doctype html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>我的第一個動畫</title>
+    <script src="https://cdn.jsdelivr.net/npm/p5@2/lib/p5.min.js"></script>
+    <style>html,body{margin:0;height:100%}main{display:flex;justify-content:center;align-items:center;height:100%}</style>
+  </head>
+  <body>
+    <main></main>
+    <script src="sketch.js"></script>
+  </body>
+</html>
+```
+
+**`test/sketch.js`**
+
+```js
+function setup() {
+  createCanvas(600, 600)
+}
+
+function draw() {
+  background(253, 252, 249)
+  circle(width / 2, height / 2, 100 + 20 * sin(frameCount * 0.05))
+}
+```
+
+### 看結果的兩種方式
+
+1. **編輯器內即時預覽（日常用）**：對 `index.html` **右鍵 →「Show Preview」**——碼在左、動畫在右；因為有自動儲存，改一行、預覽秒刷新
+2. **完整瀏覽器分頁（發表用）**：終端機跑 `npx live-server test` → 跳出通知點「**Open in Browser**」；在 Ports 面板把該埠設 Public，網址丟給同學就能當場看你的作品
+
+會動了（一顆會呼吸的圓）就代表環境沒問題——可以把 `test/` 刪掉或改名成你的第一份作業資料夾。
+
 ## ⚠️ Codespaces 三件事
 
 - **用 2-core 機型就好**（預設就是）：學生帳號每月 180 core-hours＝90 小時，夠用；開大機型會加倍燒
