@@ -44,6 +44,7 @@ Codespace 是雲端容器，登入的「自動跳轉」到不了它——**要�
 
 排錯：
 
+- 出現「Invalid OAuth Request — Unknown scope: …」？→ 網址在複製時**掉了字元**（終端機換行截斷）。直接在瀏覽器網址列把拼錯的 scope 改對（例：`fil_upload`→`file_upload`）重新載入；重來時記得用 **`c` 鍵**複製網址，**不要用滑鼠框選**換行的長網址
 - 授權完跳到「無法連上 localhost」錯誤頁？→ 看**網址列**，把 `code=` 後面那串複製回終端機貼上即可
 - 貼上沒反應？→ 終端機用**右鍵→貼上**或 `Ctrl+Shift+V`；再不行檢查 `claude --version` 是否 ≥ 2.1.108，舊了就 `npm install -g @anthropic-ai/claude-code@latest`
 
