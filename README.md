@@ -44,6 +44,27 @@ CLAUDE.md        ← 你的 AI 工作流（W3 起自己維護，這是課程核�
 
 Deadline 前 push＝繳交。commit 的時間戳就是紀錄，每一步嘗試都是過程的證據。
 
+## 🎞️ 簡報上傳 SOP（M1／M2／M3／M6 報告站）
+
+報告站每個人都要上台簡報，簡報檔跟四件套一起放進**該站資料夾**。照這四步，老師一定看得到：
+
+1. **匯出成 PDF**：PowerPoint、Keynote、Google Slides、Canva 都有「匯出／下載 PDF」——**一律傳 PDF**，因為 GitHub 網頁能直接翻頁預覽 PDF，老師點開就能看；pptx 傳上去只能下載、不能預覽，別用
+2. **取名放對位置**：檔名照「站名-簡報.pdf」，放進該站資料夾，例如：
+
+   ```
+   m1-world/m1-簡報.pdf
+   m2-species/m2-簡報.pdf
+   m3-creature/m3-簡報.pdf
+   m6-zoo/m6-簡報.pdf
+   ```
+
+3. **傳上去（兩種方法挑一種）**：
+   - **Codespace**：把 PDF 直接拖進左邊檔案總管的該站資料夾 → Source Control 寫一句訊息 → **Commit** → **Sync Changes**
+   - **repo 網頁**：打開你的 repo → 點進該站資料夾 → **Add file → Upload files** → 拖檔案進去 → **Commit changes**（單檔上限 25MB，超過幾乎都是簡報裡塞了影片——把影片抽出來另外放進資料夾，簡報裡留截圖就好）
+4. **驗收**：push 完打開 repo 網頁，點那個 PDF——**能翻頁預覽＝交付成功**，老師看到的就是這個畫面
+
+用 Google Slides 報告的人：PDF 照傳一份，想附雲端連結的話記得開「知道連結的使用者皆可檢視」再把連結寫進該站 `README.md`——連結會失效、PDF 不會，**PDF 才是交付本體**。
+
 ## 🔑 Claude 登入 SOP（Codespace 裡一定要走手動流程）
 
 Codespace 是雲端容器，登入的「自動跳轉」到不了它——**要手動貼授權碼**：
